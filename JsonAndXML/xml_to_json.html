@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML to JSON and vice versa</title>
+</head>
+<body>
+
+    <h1>XML TO JSON AND VICE VERSA</h1>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/x2js/1.2.0/xml2json.min.js" integrity="sha512-HX+/SvM7094YZEKOCtG9EyjRYvK8dKlFhdYAnVCGNxMkA59BZNSZTZrqdDlLXp0O6/NjDb1uKnmutUeuzHb3iQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+
+        //xml to json
+
+        var strXML = '<?xml version="1.0" encoding="utf-8"?> <friendsList> <friend> <name>Rachel</name> </friend> <friend> <name>Joey</name> </friend> <friend> <name>Ross</name> </friend> <bestFriend> <name>Ross</name> </bestFriend> </friendsList>';
+        var x2js = new X2JS();
+        var jsonObject = x2js.xml_str2json(strXML);
+
+        console.log(jsonObject);
+
+        //json to xml
+        var jsonData = {
+            "users":[
+                {
+                    "name": "Debasish",
+                    "age": 23,
+                    "skills": ["HTML", "CSS", "JS"],
+                    "address": {
+                        "city": "BBSR",
+                        "state": "Odisha",
+                        "country": "India"
+                    }
+                },
+
+                {
+                    "name": "Sunil",
+                    "age": 26,
+                    "skills": ["HTML", "CSS", "React"],
+                    "address": {
+                        "city": "KOL",
+                        "state": "WB",
+                        "country": "India"
+                    }
+                },
+
+                {
+                    "name": "Vikash",
+                    "age": 31,
+                    "skills": ["HTML", "CSS", "NODE js"],
+                    "address": {
+                        "city": "Ranchi",
+                        "state": "Jharkhand",
+                        "country": "India"
+                    }
+                }
+
+
+            ]
+        }
+
+        var xmlString = x2js.json2xml_str(jsonData);
+        console.log(xmlString);
+    </script>
+    
+</body>
+</html>

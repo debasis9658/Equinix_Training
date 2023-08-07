@@ -1,0 +1,38 @@
+{
+    "users":[
+        {
+            "name": "Debasish",
+            "age": 23,
+            "skills": ["HTML", "CSS", "JS"],
+            "address": {
+                "city": "BBSR",
+                "state": "Odisha",
+                "country": "India"
+            }
+        },
+
+        {
+            "name": "Sunil",
+            "age": 26,
+            "skills": ["HTML", "CSS", "React"],
+            "address": {
+                "city": "KOL",
+                "state": "WB",
+                "country": "India"
+            }
+        },
+
+        {
+            "name": "Vikash",
+            "age": 31,
+            "skills": ["HTML", "CSS", "NODE js"],
+            "address": {
+                "city": "Ranchi",
+                "state": "Jharkhand",
+                "country": "India"
+            }
+        }
+
+
+    ]
+}

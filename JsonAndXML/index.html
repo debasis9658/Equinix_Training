@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON and XML</title>
+</head>
+<body>
+
+    <h1>JSON and XML</h1>
+
+    <ul style="color: black;"></ul>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // let list = "";
+        // fetch('data.json')
+        // .then(res => res.json())
+        // .then(data => {
+        //     data.users.forEach(element => {
+        //         console.log(element.name);
+        //         list += `<li>${element.name}</li>`;
+        //     });
+            
+        //     document.querySelector("ul").innerHTML = list;
+        // });
+
+        
+
+        let users = {
+
+            "users":[
+                {
+                    "name": "Debasish",
+                    "age": 23,
+                    "skills": ["HTML", "CSS", "JS"],
+                    "address": {
+                        "city": "BBSR",
+                        "state": "Odisha",
+                        "country": "India"
+                    }
+                },
+
+                {
+                    "name": "Sunil",
+                    "age": 26,
+                    "skills": ["HTML", "CSS", "React"],
+                    "address": {
+                        "city": "KOL",
+                        "state": "WB",
+                        "country": "India"
+                    }
+                },
+
+                {
+                    "name": "Vikash",
+                    "age": 31,
+                    "skills": ["HTML", "CSS", "NODE js"],
+                    "address": {
+                        "city": "Ranchi",
+                        "state": "Jharkhand",
+                        "country": "India"
+                    }
+                }
+
+
+            ]
+        }
+
+        //json to string:
+
+        let userString = JSON.stringify(users);
+        console.log(userString);
+
+        //string to json:
+        
+        let stringifiedData = `{"users":[{"name":"Debasish","age":23,"skills":["HTML","CSS","JS"],"address":{"city":"BBSR","state":"Odisha","country":"India"}},{"name":"Sunil","age":26,"skills":["HTML","CSS","React"],"address":{"city":"KOL","state":"WB","country":"India"}},{"name":"Vikash","age":31,"skills":["HTML","CSS","NODE js"],"address":{"city":"Ranchi","state":"Jharkhand","country":"India"}}]}`;
+        let jsObj = JSON.parse(stringifiedData);
+        console.log(jsObj);
+    </script>
+    
+</body>
+</html>
