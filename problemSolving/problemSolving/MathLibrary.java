@@ -376,7 +376,12 @@ class MathLibrary { // this particular class, we did not create a constructor, d
 		return ans;
     }
     
-    
+    /** Divide two arrays as each digit level like real division
+     * @param op1 as an integer array
+     * @param op2 as an integer array
+     * @return an integer array
+     */
+    public
     public int[] division(int[] op1, int[] op2) {
     	int firstArraySize = op1.length;
 		int secondArraySize = op2.length;
