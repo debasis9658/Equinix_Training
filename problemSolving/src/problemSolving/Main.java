@@ -5,8 +5,8 @@ public class Main {
     public static void main(String[] args) {
 
         MathLibrary myMathLib = new MathLibrary();
-        myMathLib.setOperand1("512");
-        myMathLib.setOperand2("7");
+        myMathLib.setOperand1("845");
+        myMathLib.setOperand2("578");
         myMathLib.printArray(myMathLib.getOperand1());
         myMathLib.printArray(myMathLib.getOperand2());
         

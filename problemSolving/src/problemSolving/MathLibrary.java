@@ -88,7 +88,7 @@ class MathLibrary { // this particular class, we did not create a constructor, d
     public void printArray(int arrayToPrint[]) {
         
         System.out.print(" --> ");
-        for (int i=0; i<arrayToPrint.length; i++) {
+        for (int i = 0; i < arrayToPrint.length; i++) {
         	if(arrayToPrint[i] == -1) {
         		System.out.print(".");
         		continue;
@@ -232,7 +232,7 @@ class MathLibrary { // this particular class, we did not create a constructor, d
 		// Pre-processing of array for addition
 		preProcessing(array);
 		
-		//Adding arrays to get finalArray
+		//Adding arrays to get finalArray	
 		
 		int[] finalAns = new int[100];
 		Arrays.fill(finalAns, -1);
@@ -252,6 +252,9 @@ class MathLibrary { // this particular class, we did not create a constructor, d
 	            carry = 0;
 	        }
 	    }
+		if(carry > 0) {
+			addAtBeg(finalAns, carry);
+		}
 		
 		
 		return finalAns;
@@ -376,12 +379,12 @@ class MathLibrary { // this particular class, we did not create a constructor, d
 		return ans;
     }
     
+    
     /** Divide two arrays as each digit level like real division
      * @param op1 as an integer array
      * @param op2 as an integer array
      * @return an integer array
      */
-    public
     public int[] division(int[] op1, int[] op2) {
     	int firstArraySize = op1.length;
 		int secondArraySize = op2.length;
