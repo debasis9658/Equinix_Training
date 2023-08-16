@@ -1,0 +1,7 @@
+This is the content to write into the new file.
+aabc
+abc
+kfc
+lipsa
+niku
+xyz

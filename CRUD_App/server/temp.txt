@@ -1,0 +1,32 @@
+// module.exports.updateFile = function(req, res) {
+//     const oldString = req.params.stringToBeReplaced;
+//     const newString = req.params.stringToBeReplacedBy;
+//     console.log("OLDSTRING:", oldString);
+//     console.log("NEWSTRING", newString);
+//     const originalContent = fs.readFileSync('newFile.txt', 'utf8');
+//     const isWordPresent = originalContent.includes(oldString);
+//     let modifiedString = originalContent;
+//     if(isWordPresent && checkValidation(newString)){
+//         try {
+//             modifiedString = originalContent.replace(new RegExp(oldString, 'g'), newString);
+//             fs.writeFile('newFile.txt', modifiedString, 'utf8', (err) => {
+//                 if (err) {
+//                     console.error("********Error is: ", err);
+//                     res.status(500).send('Error updating file');
+//                     return;
+//                 }
+//                 else {
+//                     return res.end("Successfully updated");
+//                 }
+//             });
+//         } catch (error) {
+//             console.error(error);
+//             res.status(500).send('An error occurred');
+//         }
+//     }
+//     else{
+//         res.end('Error in validation');
+//     }
+    
+
+// }
