@@ -17,8 +17,8 @@ public class TextFile {
 	/** Constructor which creates instance of TextFile class object
 	 * 
 	 */
-	public TextFile() {
-		file = new File("dictionary.txt");
+	public TextFile(String fileName) {
+		file = new File(fileName);
 		stringArray =  new ArrayList<String>();
 		return;
 	}
@@ -28,7 +28,7 @@ public class TextFile {
 	 * @return a boolean value if we succeed in validating the input
 	 * @throws IllegalArgumentException if input is not of required format
 	 */
-	private boolean isValid(String str) throws IllegalArgumentException {
+	private static boolean isValid(String str) throws IllegalArgumentException {
 		String regex = "^[^\\s]*$"; // This regex matches strings that do not contain any whitespace characters.
 
         if (Pattern.matches(regex, str)) {
@@ -70,10 +70,9 @@ public class TextFile {
 	 */
 	private void writeToFile() {
 		
-		File tempfile = new File("dictionary.txt");
 		
 		try {
-		      FileWriter myWriter = new FileWriter(tempfile);
+		      FileWriter myWriter = new FileWriter(this.file);
 		      for(int i = 0; i < this.stringArray.size(); i++) {
 		    	  myWriter.write(stringArray.get(i) + " ");
 		      }
@@ -84,8 +83,6 @@ public class TextFile {
 		      e.printStackTrace();
 		    }
 		
-		
-		this.file  = tempfile;
 		return;
 	}
 
@@ -138,7 +135,7 @@ public class TextFile {
 		try (FileInputStream inputStream = new FileInputStream(this.file)) {
             byte[] buffer = new byte[1024];
             int bytesRead;
-            System.out.println("Output stream from File: ");
+            System.out.println("Output stream from file " + this.file + " are: ");
             while ((bytesRead = inputStream.read(buffer)) != -1) {
                 String content = new String(buffer, 0, bytesRead);
                 System.out.println(content); // Print the content of the buffer
@@ -151,9 +148,31 @@ public class TextFile {
 	
 	
 	public static void main(String args[]) {
-		TextFile t5 = new TextFile();
-		t5.create("abc");
+		TextFile t1 = new TextFile("dictionary2.txt");
+		t1.create("abc");
+		t1.readArray();
+		t1.readFile();
+		t1.create("acd");
+		t1.readArray();
+		t1.readFile();
+		t1.create("aabc");
+		t1.readArray();
+		t1.readFile();
+		t1.update("abc",  "zxy");
+		t1.readArray();
+		t1.readFile();
+		t1.create("leets");
+		t1.create("aaa");
+		t1.readFile();
+		t1.delete("leets");
+		t1.readFile();
 		
+		TextFile t2 = new TextFile("dictionary3.txt");
+		t2.create("demo1");
+		t2.create("demo2");
+		
+		t1.readFile();
+		t2.readFile();
 	}
 	
 }
