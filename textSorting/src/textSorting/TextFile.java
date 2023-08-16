@@ -151,19 +151,8 @@ public class TextFile {
 	
 	
 	public static void main(String args[]) {
-		TextFile t1 = new TextFile();
-		t1.create("abc");
-		t1.readArray();
-		t1.readFile();
-		t1.create("acd");
-		t1.readArray();
-		t1.readFile();
-		t1.create("aabc");
-		t1.readArray();
-		t1.readFile();
-		t1.update("abc",  "zxy");
-		t1.readArray();
-		t1.readFile();
+		TextFile t5 = new TextFile();
+		t5.create("abc");
 		
 	}
 	
