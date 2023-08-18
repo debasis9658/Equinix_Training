@@ -1,0 +1,26 @@
+This is the file to contain the data definition stuff. 
+
+createDatabase(newDBName) // create a new folder, with that name, have restrictions on the name.. 
+
+createTable(tableName, { name: string, age: Number, address: "string", isMarried: true, salary: "" }) // employee, creates a file in that folder tableName.json
+
+------------------------------------
+{ employees: [] }
+
+{ employees: [ 
+    {
+        name: "Debasish", 
+        age: 22, 
+        address: "Hno, do noadf;lkjasdfl;kjBhubaneswar",
+        isMarried: false,
+        salary: 09854578965434
+    }, 
+    {},
+    {}
+] }
+
+------------------------------------
+CREATE TABLE tableName name: VARCHAR.. 
+
+
+in sab cheejo ko export karega

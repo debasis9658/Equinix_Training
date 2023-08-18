@@ -1,0 +1,17 @@
+{
+  "name": "aspireexample",
+  "version": "0.0.0",
+  "description": "This is the smplest node project but will grow into something awesome",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "my",
+    "json",
+    "db"
+  ],
+  "author": "Puran and Debasish",
+  "license": "MIT"
+}
