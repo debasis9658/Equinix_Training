@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>textSorting_Evaluation_Test</name>
+	<name>textSorting</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -16,7 +16,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1692255654267</id>
+			<id>1692255654263</id>
 			<name></name>
 			<type>30</type>
 			<matcher>

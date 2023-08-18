@@ -1,0 +1,30 @@
+{
+  "table_name": "demo",
+  "schema": {
+    "name": {
+      "regex": "[a-z]+",
+      "type": "string"
+    },
+    "age": {
+      "regex": "^[1-9]\\d+$",
+      "type": "number"
+    },
+    "isManager": {
+      "type": "boolean"
+    }
+  },
+  "data": [
+    {
+      "id": "0625c702-fac6-4c49-bf35-ea81c5031846",
+      "name": "Debasish",
+      "age": 32,
+      "isManager": false
+    },
+    {
+      "id": "3b23a1d2-9720-496d-8c44-5443156ec3dc",
+      "name": "Leets",
+      "age": 22,
+      "isManager": false
+    }
+  ]
+}

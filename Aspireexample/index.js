@@ -2,25 +2,67 @@
 const db = require('./db_implementation/ddl');
 
 async function main() {
+    
     const db1 = new db('myDatabase');
 
-    await db1.createEmptyJSONFile('data', []);
-    await db1.addToJSONFile('data', { id: 1, name: 'John Doe' });
-    await db1.addToJSONFile('data', { id: 2, name: 'Leets' });
-    await db1.readAndPrintJSONFile('data');
-    await db1.updateJSONElement('data', 'id', { id: 1, name: 'Debasish' });
-    await db1.readAndPrintJSONFile('data');
-    await db1.deleteJSONElement('data', 'id', 2);
-    await db1.readAndPrintJSONFile('data');
+    const dynamicSchema = {
+        "name": { "regex": "[a-z]+", "type": "string" },
+        "age": { "regex": "^[1-9]\\d+$", "type": "number" },
+        "isManager": {"type": "boolean"}
+    };
 
-    await db1.createEmptyJSONFile('data2', []);
-    await db1.addToJSONFile('data2', { id: 1, name: 'Devs', age: 22, email: 'debasisjkbk@gmail.com'});
-    await db1.addToJSONFile('data2', { id: 3, name: 'Jyo', age: 22, email: 'jyo@gmail.com'});
-    await db1.addToJSONFile('data2', { id: 1, name: 'Vikash', age: 23, email: 'vik@gmail.com'});
-    await db1.addToJSONFile('data2', { id: 1, name: 'Sunil', age: 25, email: 'sunil@gmail.com'});
-    await db1.readAndPrintJSONFile('data2');
-    await db1.updateJSONElement('data2', 'name', { id: 4, name: 'Devs', age: 29, email: 'kkk@gmail.com' });
-    await db1.readAndPrintJSONFile('data2');
+    const validData1 = {
+        "name": "john",
+        "age": 30,
+        "isManager": true
+    };
+    const validData2 = {
+        "name": "Debasish",
+        "age": 30,
+        "isManager": true
+    };
+    const validData3 = {
+        "name": "Leets",
+        "age": 22,
+        "isManager": false
+    };
+
+    const invalidData1 = {
+        "name": "alice",
+        "age": -10,
+        "isManager": true
+    };
+    const invalidData2 = {
+        "name": "alice",
+        "age": "778",
+        "isManager": true
+    };
+    const invalidData3 = {
+        "name": "alice",
+        "age": 10
+    };
+
+
+
+
+    try{
+        await db1.createJSONFile('demo', dynamicSchema);
+        const id1 = await db1.addToJSONFile('demo', validData1);
+        const id2 = await db1.addToJSONFile('demo', validData2);
+        const id3 = await db1.addToJSONFile('demo', validData3);
+        await db1.readAndPrintJSONFile('demo');
+        const upadatedData = {
+            "age": 32,
+            "isManager": false
+        }
+        await db1.updateJSONElement('demo', id2, upadatedData);
+        await db1.readAndPrintJSONFile('demo');
+        await db1.deleteJSONElement('demo', id1);
+        await db1.readAndPrintJSONFile('demo');
+    }
+    catch(err){
+        console.error("Error:", err);
+    }
 
 }
 

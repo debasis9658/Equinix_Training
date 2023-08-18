@@ -13,5 +13,8 @@
     "db"
   ],
   "author": "Puran and Debasish",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "uuid": "^9.0.0"
+  }
 }
